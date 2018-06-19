@@ -1,14 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Video Compression
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
+<ion-content padding class="vertical-align-content">
+  <div>
+  <h2>The world is not your oyster.</h2>
+  <label>Better move your ass and change the game.</label>
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+      This is a compression and base64 transformation app for phone videos using the Ionic framework and the cordova VideoEditor Plugin !!
+  </p> <p>
+    If you want more details, check this git repo for the plugin features <a href="https://github.com/jbavari/cordova-plugin-video-editor">External Link</a>
   </p>
+
+<div>
+  <h4 *ngIf="!compressionError && progression != null">Progress : {{progression}} %</h4>
+  <h4 *ngIf="compressionError">Processing Error : {{compressionErrorText}}</h4>
+  <button ion-button round (tap)="videoFromGalery()">Galery</button>
+  <button ion-button round color="secondary" (tap)="videoFromCamera()">Camera</button>
+  <br>
+  <button ion-button large color="danger" (tap)="videoRadioAlert()">CHOOSE</button>
+</div>
+  </div>
 </ion-content>
